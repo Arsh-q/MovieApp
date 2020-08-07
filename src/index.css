@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;600&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+.main{
+  z-index: -1;
+  font-family: 'Righteous', cursive;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  font-size: 3rem;
+  font-family: 'Righteous', cursive;
+  color: white;
+  letter-spacing: 1px;
+  min-height: 10vh;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.search-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.search-box input{
+  padding: 10px 20px;
+  width: 30%;
+  font-family: 'Hind Vadodara', sans-serif;
+  border: none;
+  background-color: rgb(224, 231, 233);
+  font-size: 1.3rem;
+  outline: none;
+  margin-right: 1.5rem;
+  box-shadow: 2px 2px rgb(39, 39, 39,0.4);
+  border-radius: 8px;
+  transition: all ease-in-out 0.3s;
+}
+.search-box input:focus{
+  background-color: white;
+}
+.search-box button {
+  background-color: white;
+  border-radius: 50px;
+  padding: 12px;
+  outline: none;
+  color: #0f0c29;
+  border: none;
+  box-shadow: 3px 3px 5px gray;
+  transition: all ease-in-out 0.3s;
+
+}
+
+.search-box button:hover{
+  transform: scale(1.05);
+  box-shadow: 4px 4px 5px gray;
+}
+.movie_card{
+  color: aliceblue;
+}
+.movie_card .title{
+  font-family: 'Righteous', cursive;
+}
+.movie_card .year{
+  font-family: 'Hind Vadodara', sans-serif;
+  font-weight: 400;
+}
+
+.errorMessage{
+
+  color: aliceblue;
+  font-family: 'Hind Vadodara', sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  padding-left: 20px;
+}
+.loading{
+  color: aliceblue;
+  font-family: 'Hind Vadodara', sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+
+.slideshow {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.slideshow li {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	opacity: 0;
+	z-index: -1;
+	animation: imageAnimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+ background-image: url(https://wallpapersite.com/images/wallpapers/avengers-3840x2160-marvel-universe-phase-one-89.jpg) 
+
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://i.pinimg.com/originals/96/d3/40/96d34075810c585707b51d45b1d71b91.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://images.wallpapersden.com/image/download/thanos-vs-trinity_67172_1920x1080.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://images.hdqwalls.com/download/guardians-of-the-galaxy-vol-art-63-2560x1440.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://cdn.wallpapersafari.com/15/91/iSUqcP.jpg);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation {
+	0% {
+		opacity: 0;
+		animation-timing-function: ease-in;
+	}
+	10% {
+		opacity: 1;
+		animation-timing-function: ease-out;
+	}
+	20% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0;
+	}
+}
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
+
+
+
+@media screen and (max-width: 786px){
+.search-box input{
+  width: auto;
+}
+}
+@media screen and (max-width: 400px){
+.header{
+  font-size: 2.5rem;
+}
+.errorMessage{
+  font-size: 2rem;
+}
+.loading{
+  font-size: 2rem;
+
+}
+.movie_card{
+  padding: 5rem 0;
+}
+.movie_card:nth-child(1){
+  padding-top: 1rem;
+}
+.search-box input{
+  width: 80%;
+}
+}
